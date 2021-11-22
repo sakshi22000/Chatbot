@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{{ url_for('static', filename='style-chat.css') }}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+</head>
+<body>
+     <style >
+        body {
+               
+               background-image: url("C:/Users/ACER/chatbot-project/mriirs.png");
+               background-color: pink;
+               min-height: 100vh;
+               width:100%;
+               background-position: center;
+               background-size: cover;
+               position: relative; 
+           }
+
+           *{
+    margin:0;
+    padding:0;
+}
+.header{
+    min-height: 100vh;
+    width:100%;
+    background-image: url(C:\Users\ACER\chatbot-project\static\images\mriirs.jpeg);
+    background-position: center;
+    background-size: cover;
+    position: relative; 
+}
+.nav{
+    display:flex;
+    padding: 2% 6%;
+    justify-content:space-between;
+    align-items: center;
+}
+nav img{
+    width:300px;
+    height:100px;
+}
+.nav-links{
+    flex:1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style:none;
+    display: inline-block;
+    padding: 2px 8px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: white;
+    text-decoration:none;
+    font-size: 25px;
+}
+.nav-links ul li::after{
+    content:'';
+    width: 0%;
+    height:2px;
+    background:#f44336;
+    display:block;
+    margin:auto;
+    transition:0.5s;
+}
+.nav-links ul li:hover::after{
+    width:100%;
+}
+.text-box{
+    width:90%;
+    color:#fff;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+}
+.text-box h1{
+    font-size:70px;
+    color:white;
+    background:black;
+}
+.text-box p{
+    margin:10px 0 40px;
+    font-size:20px;
+    color:#fff;
+    background:black;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration:none;
+    color:#fff;
+    border:1px solid #fff;
+    font-size:20px;
+    background:black;
+    position:relative;
+    cursor:pointer;
+}
+.hero-btn:hover{
+    border:1px solid #f44336 ;
+    background: #f44336 ;
+    transition:1s;
+}
+nav.fa{
+    display:none;
+}
+@media(max-width: 700px){
+    .text-box h1{
+        font-size:30px;
+    }
+    .nav-links ul li{
+        display:block;
+    }
+    .nav-links{
+        position:absolute;
+        background:#f44336;
+        height:100vh;
+        width:150px;
+        top:0;
+        right:-200px;
+        text-align::left;
+        z-index:2;
+    }
+    .nav.fa{
+        display:block;
+        color:#fff;
+        margin:10px;
+        font-size:22px;
+        cursor:pointer;
+    }
+    .nav-links ul{
+        padding:30px;
+    }
+}
+
+           
+    </style>
+    <section class="header">
+        <nav>
+            <a href="base.html"><img src="{{ url_for('static', filename='images/logo.png') }}" /></a>
+            <div class="nav-links">
+                <i class="fa fa-times"></i>
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">COURSE</a></li>
+                    <li><a href="">BLOG</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Manav Rachna International Institute of Research and Studies </h1>
+            <p>Manav Rachna International Institute of Research and Studies (MRIIRS) is a National Assessment and Accreditation Council (NAAC) accredited A-grade university. <br>It was granted the Deemed university status under section 3 of the UGC Act 1956, as Manav Rachna International University.
+            </p>
+            <a href="" class="hero-btn">Visit Us To Know More</a>
+        </div>
+
+    </section>
+   
+<div class="container">
+    <div class="chatbox">
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+                <div class="chatbox__image--header">
+                    <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+                </div>
+                <div class="chatbox__content--header">
+                    <h4 class="chatbox__heading--header">Chat support</h4>
+                    <p class="chatbox__description--header">Hi,I am Manav Rachna Chatbot. How can I help you?</p>
+                </div>
+            </div>
+            <div class="chatbox__messages">
+                <div></div>
+            </div>
+            <div class="chatbox__footer">
+                <input type="text" placeholder="Write a message...">
+                <button class="chatbox__send--footer send__button">Send</button>
+            </div>
+        </div>
+        <div class="chatbox__button">
+            <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
+        </div>
+    </div>
+</div>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>
